@@ -90,15 +90,19 @@
       "You are a vision of perfection.",
       "You are more beautiful than words can express.",
       "بالفعل، رؤيتك تسرّ أعيني."
-      
     ];
 
     let currentQuote = 0;
 
     function changeQuote() {
-      document.getElementById("quote").innerHTML = ""; // Clear the current quote
-      setTimeout(function() { // Delay the change of the quote
+      // Clear the current quote (optional for visual effect)
+      document.getElementById("quote").innerHTML = "";
+
+      setTimeout(function() {
+        // Update the quote with the next quote in the array
         document.getElementById("quote").innerHTML = quotes[currentQuote];
+
+        // Update the index to point to the next quote
         currentQuote = (currentQuote + 1) % quotes.length;
       }, 100); // Delay for 100 milliseconds
     }
